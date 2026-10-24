@@ -1,0 +1,18 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define WIFI_SSID ""
+#define WIFI_PASS ""
+
+#define FIREBASE_API_KEY ""
+#define FIREBAASE_AUTH_DOMAIN ""
+#define FIREBASE_URL ""
+#define FIREBASE_PROJECT_ID ""
+#define FIREBASE_STORAGE_BUCKET ""
+#define FIREBASE_MESSAGING_SENDER_ID ""
+#define FIREBASE_APP_ID ""
+
+#define FIREBASE_USER_EMAIL ""
+#define FIREBASE_USER_PASSWORD ""
+
+#endif

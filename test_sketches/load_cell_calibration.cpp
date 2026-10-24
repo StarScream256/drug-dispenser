@@ -18,21 +18,17 @@ void setup() {
   Serial.println("\n=== TIMBANGAN HX711 DENGAN PENYIMPANAN ESP32 ===");
 
   scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
-
-  // 1. Buka ruang penyimpanan bernama "timbangan"
   prefs.begin("timbangan", false); 
   
-  // 2. Baca nilai kalibrasi yang tersimpan sebelumnya. 
   // Jika belum pernah disimpan, nilai default-nya adalah 1.0
   faktor_kalibrasi_saved = prefs.getFloat("faktor", 1.0);
   
   Serial.print("Nilai kalibrasi yang tersimpan di memori: ");
   Serial.println(faktor_kalibrasi_saved);
 
-  // 3. Terapkan faktor kalibrasi yang berhasil dibaca
   scale.set_scale(faktor_kalibrasi_saved);
   
-  // 4. Lakukan tare (nol-kan timbangan) saat start
+  // tare (nol-kan timbangan) saat start
   Serial.println("Mengosongkan timbangan (Tare)...");
   scale.tare();
   Serial.println("Timbangan siap digunakan.");
@@ -41,6 +37,8 @@ void setup() {
   Serial.println("Ketik 'K' lalu Enter di Serial Monitor jika ingin melakukan KALIBRASI ULANG.");
   Serial.println("------------\n");
 }
+
+void jalankanKalibrasiOtomatis();
 
 void loop() {
   // Tampilkan pembacaan berat secara kontinu

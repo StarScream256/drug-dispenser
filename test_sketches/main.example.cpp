@@ -69,6 +69,11 @@ void connectToWiFi() {
   delay(2000);
 }
 
+void waitForTrayEmptiedAndDelay();
+void updateLCDCount(int current, int target);
+void dispenseAllDrugs();
+
+
 void setup() {
   // Inisialisasi LCD
   lcd.init();
@@ -107,7 +112,6 @@ void loop() {
   // Loop utama kosong karena proses berjalan di setup()
 }
 
-// --- Fungsi Utama Dispensing Obat ---
 void dispenseAllDrugs() {
   for (int i = 0; i < NUM_SERVOS; i++) {
     
