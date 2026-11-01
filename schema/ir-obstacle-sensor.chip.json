@@ -1,0 +1,10 @@
+{
+  "name": "ir-obstacle-sensor",
+  "author": "Muhammad Arif Hermawan",
+  "pins": [
+    "VCC",
+    "GND",
+    "OUT"
+  ],
+  "controls": []
+}

@@ -1,0 +1,9 @@
+[wokwi]
+version = 1
+firmware = '..\.pio\build\esp32doit-devkit-v1\firmware.bin'
+elf = '..\.pio\build\esp32doit-devkit-v1\firmware.elf'
+
+[[chip]]
+name = "ir-obstacle-sensor"
+binary = "ir-obstacle-sensor.chip.wasm"
+json = "ir-obstacle-sensor.chip.json"
