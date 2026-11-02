@@ -1,14 +1,14 @@
 #include <Arduino.h>
 
-#define LED_PIN 12
+#define LED_PIN 26
 
-void setup() {
+void ledTestSetup() {
   Serial.begin(115200);
   pinMode(LED_PIN, OUTPUT);
   Serial.println("LED test initialized.");
 }
 
-void loop() {
+void ledTestLoop() {
   Serial.println("LED ON");
   digitalWrite(LED_PIN, HIGH);
   delay(2000);

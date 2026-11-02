@@ -5,7 +5,7 @@
 // Parameters: (I2C_ADDRESS, COLUMNS, ROWS)
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-void setup() {
+void lcdI2cTestSetup() {
   Serial.begin(115200);
 
   Wire.begin();
@@ -21,7 +21,7 @@ void setup() {
   lcd.clear();
 }
 
-void loop() {
+void lcdI2cTestLoop() {
   // Line 1: Static label
   lcd.setCursor(0, 0);
   lcd.print("Status: Active");

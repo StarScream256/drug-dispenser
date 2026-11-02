@@ -2,13 +2,13 @@
 
 #define BUZZER_PIN 25
 
-void setup() {
+void buzzerTestSetup() {
   Serial.begin(115200);
   pinMode(BUZZER_PIN, OUTPUT);
   Serial.println("Buzzer test initialized.");
 }
 
-void loop() {
+void buzzerTestLoop() {
   Serial.println("Buzzer ON");
   digitalWrite(BUZZER_PIN, HIGH);
   delay(2000);

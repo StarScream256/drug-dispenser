@@ -1,11 +1,11 @@
 #include <Arduino.h>
 #include <ESP32Servo.h>
 
-#define SERVO_PIN 5
+#define SERVO_PIN 23
 
 Servo myServo;
 
-void setup() {
+void servoTestSetup() {
   Serial.begin(115200);
 
   myServo.attach(SERVO_PIN);
@@ -13,7 +13,7 @@ void setup() {
   Serial.println("Servo test initialized.");
 }
 
-void loop() {
+void servoTestLoop() {
   Serial.println("Moving to 0 degrees");
   myServo.write(0);
   delay(1000);

@@ -1,0 +1,47 @@
+// #include <Arduino.h>
+// #include <WiFi.h>
+// #include "config.h"
+// #include "firebase_service.h"
+
+// #define INFRARED_PIN 23
+
+// unsigned long lastTestMillis = 0;
+// int counter = 0;
+// int irStatus = HIGH;
+// int lastIrStatus = HIGH;
+// unsigned long lastDebounceTime = 0;
+// const unsigned long debounceDelay = 20;
+
+// void infraredTestSetup() {
+//   Serial.begin(115200);
+//   pinMode(INFRARED_PIN, INPUT);
+//   Serial.println("Starting...");
+//   WiFi.begin(WIFI_SSID, WIFI_PASS);
+//   Serial.print("Connecting to Wi-Fi");
+//   while (WiFi.status() != WL_CONNECTED) {
+//     Serial.print(".");
+//     delay(300);
+//   }
+//   Serial.println("\n[Wi-Fi] Terhubung! IP: " + WiFi.localIP().toString());
+
+//   setupFirebase();
+// }
+
+// void infraredTestLoop() {
+//   loopFirebase();
+
+//   int currentReading = digitalRead(INFRARED_PIN);
+
+//   if (currentReading != lastIrStatus) {
+//     if ((millis() - lastDebounceTime) > debounceDelay) {
+//       lastDebounceTime = millis();
+//       lastIrStatus = currentReading;
+
+//       if (currentReading == LOW) {
+//         counter++;
+//         Serial.printf("[Sensor IR] Object Passed! Counter: %d\n", counter);
+//         testInfraredNode(counter);
+//       }
+//     }
+//   }
+// }

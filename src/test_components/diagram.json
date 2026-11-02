@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "author": "Muhammad Arif Hermawan",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -38.4, "left": -139.16, "attrs": {} },
+    {
+      "type": "wokwi-hx711",
+      "id": "cell1",
+      "top": -122.2,
+      "left": 69.8,
+      "attrs": { "type": "5kg" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -132,
+      "left": -276.6,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": 27.8,
+      "left": 49.8,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -118.8,
+      "left": -332.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -25.4,
+      "left": -346.45,
+      "rotate": 270,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.2", "j1:J", "black", [ "h67.2", "v-48" ] ],
+    [ "cell1:GND", "j1:J", "black", [ "h-19.2", "v86.1" ] ],
+    [ "servo1:GND", "j1:J", "black", [ "v9.6", "h-86.4", "v-230.4" ] ],
+    [ "cell1:SCK", "esp:18", "yellow", [ "v-0.8", "h-76.8", "v192" ] ],
+    [ "cell1:DT", "esp:19", "yellow", [ "v-0.5", "h-86.4", "v192" ] ],
+    [ "cell1:VCC", "j3:J", "red", [ "h-67.2", "v384" ] ],
+    [ "servo1:V+", "j3:J", "red", [ "v0" ] ],
+    [ "bz1:1", "j4:J", "black", [ "v0" ] ],
+    [ "j4:J", "esp:GND.1", "black", [ "v105.6" ] ],
+    [ "led3:C", "r3:2", "black", [ "v0" ] ],
+    [ "r3:1", "j4:J", "black", [ "h0" ] ],
+    [ "bz1:2", "esp:25", "blue", [ "v38.4", "h28.4", "v76.8" ] ],
+    [ "servo1:PWM", "esp:23", "orange", [ "v19.2", "h-115", "v-182.4" ] ],
+    [ "j3:J", "esp:5V", "red", [ "h-9.6", "h-115.35" ] ],
+    [ "led3:A", "esp:26", "violet", [ "v76.8", "h86.4", "v76.8" ] ],
+    [ "r3:1", "esp:GND.1", "black", [ "h86.4", "v115.2" ] ],
+    [ "bz1:1", "esp:GND.1", "black", [ "v57.6", "h19.2", "v115.2" ] ],
+    [ "cell1:GND", "esp:GND.2", "black", [ "h-96", "v95.7" ] ],
+    [ "cell1:VCC", "esp:3V3", "red", [ "h-211.35" ] ],
+    [ "servo1:GND", "esp:GND.2", "black", [ "h-86.4", "v-172.8" ] ],
+    [ "servo1:V+", "esp:5V", "red", [ "v9.6", "h-268.85" ] ]
+  ],
+  "dependencies": {}
+}
